@@ -1,0 +1,77 @@
+[tool.poetry]
+name = "inheritance"
+version = "0.1.0"
+description = ""
+authors = ["YevheniiMelnikov <evgeniy@workmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+setuptools = "^74.1.2"
+python-dotenv = "^1.0.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff.lint.isort]
+combine-as-imports = true
+
+[tool.ruff]
+line-length = 120
+exclude = [
+  ".git",
+  ".mypy_cache",
+  ".pytest_cache",
+  ".env",
+  "env",
+  "venv",
+  ".venv",
+]
+
+[tool.black]
+line-length = 120
+target-version = ['py310']
+include = '\.pyi?$'
+exclude = '''
+(
+  /(
+      \.git
+    | \.mypy_cache
+    | \.pytest_cache
+    | \.env
+    | env
+    | venv
+    | .venv
+  )
+)
+'''
+
+[tool.mypy]
+follow_imports = "skip"
+strict_optional = false
+check_untyped_defs = false
+allow_untyped_globals = true
+ignore_missing_imports = true
+disallow_untyped_calls = true
+warn_unused_ignores = true
+warn_unreachable = true
+exclude = '''
+(
+  \.git
+| \.mypy_cache
+| \.pytest_cache
+| \.env
+| env
+| .venv
+| venv
+)
+'''
+
+[tool.poetry.group.dev.dependencies]
+black = "^24.8.0"
+ruff = "^0.6.3"
+mypy = "^1.11.2"
+mypy-extensions = "^1.0.0"
+pytest = "^7.2.0"
+loguru = "^0.7.2"
