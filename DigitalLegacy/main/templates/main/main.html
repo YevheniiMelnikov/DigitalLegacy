@@ -1,0 +1,122 @@
+{% extends "main/base.html" %}
+
+{% block title %}Головна{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <h1>Спадщина, яка зберігає пам'ять</h1>
+        <p>Упорядкуйте свої цифрові активи та створіть меморіальні сторінки для збереження пам’яті про вас</p>
+        <a href="#contact" class="btn btn-primary">Зв'язатися з нами</a>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="section">
+    <div class="container">
+        <h2 class="section-title">Про нас</h2>
+        <p>
+            Світ стає все більш цифровим, а наші дані — невід'ємною частиною нашого життя. Люди накопичують значні обсяги цифрових активів: акаунти в соціальних мережах, електронні листи, криптовалюту, медіафайли та іншу інформацію.
+            Наш сайт допомагає впорядкувати ці цифрові активи, зберегти важливу інформацію та створити меморіальні сторінки, що дозволяють зберегти пам’ять про людину.
+            Ми віримо, що кожен має право не бути забутим. Наша місія — забезпечити доступ до необхідних документів і сервісів у разі непередбачених обставин, таких як незапланований переїзд, знищення житла або інші життєві виклики. Ми допомагаємо захистити Ваші цифрові цінності та забезпечити їх доступність для Вас та Ваших близьких.
+        </p>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section id="faq" class="section faq">
+    <div class="container">
+        <h2 class="section-title">Часті запитання</h2>
+        <div class="accordion" id="faqAccordion">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Що таке цифрова спадщина?
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show"
+                     aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Цифрова спадщина — це сукупність ваших онлайн-активів, таких як акаунти в соціальних мережах, електронні листи, фотографії, документи та інша цифрова інформація.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Чому важливо планувати свою цифрову спадщину?
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse"
+                     aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Планування цифрової спадщини дозволяє Вам контролювати, що станеться з Вашими онлайн-активами після смерті. Це допоможе захистити Вашу репутацію, забезпечити доступ Ваших близьких до важливої інформації та уникнути потенційних проблем.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Які дані слід включити до цифрового заповіту?
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse"
+                     aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        До цифрового заповіту можна включити: паролі від акаунтів, список контактів, інструкції щодо видалення або архівування даних, а також призначення довіреної особи.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFour">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        Як забезпечити безпеку моїх даних?
+                    </button>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse"
+                     aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Ми використовуємо найсучасніші технології шифрування для захисту Ваших даних. Ваша інформація зберігається на безпечних серверах і доступна лише за допомогою унікального пароля.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="section bg-light">
+    <div class="container">
+        <h2 class="section-title">Контакти</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <form action="{% url 'contact' %}" method="post">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Ім'я</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Повідомлення</label>
+                        <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Надіслати</button>
+                </form>
+            </div>
+        </div>
+        <p class="mt-4 text-center" style="font-size: 0.9rem;">
+            Телефон: +38 (111) 111 11 11<br>
+            Email: <a href="mailto:info@espadshchina.ua">info@espadshchina.ua</a>
+        </p>
+    </div>
+</section>
+{% endblock %}
