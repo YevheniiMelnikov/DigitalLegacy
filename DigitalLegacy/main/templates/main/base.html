@@ -7,185 +7,7 @@
     <title>{% block title %}ЄСпадщина{% endblock %}</title>
     <link href="https://fonts.googleapis.com/css2?family=Impact&family=Verdana&family=Arial&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <style>
-        body {
-            background-color: #f8f9fa;
-            color: #333333;
-            font-family: 'Verdana', sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-        }
-
-        .navbar {
-            background-color: #2C3E50;
-            padding: 10px 0;
-        }
-        .navbar-brand {
-            font-family: 'Impact', sans-serif;
-            color: #ffffff !important;
-            font-weight: normal;
-            font-size: 1.5rem;
-            display: flex;
-            align-items: center;
-        }
-        .navbar-brand img {
-            height: 40px;
-            margin-right: 10px;
-        }
-        .navbar-nav .nav-link {
-            font-family: 'Arial', sans-serif;
-            color: #ffffff !important;
-            font-weight: normal;
-            margin: 0 10px;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        .navbar-nav .nav-link:hover {
-            color: #18BC9C !important;
-        }
-        .navbar .btn {
-            color: #2C3E50;
-            background-color: #E74C3C;
-            border: none;
-            font-weight: normal;
-            padding: 7px 20px;
-            text-decoration: none;
-            margin-left: 10px;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-            font-family: 'Verdana', sans-serif;
-        }
-        .navbar .btn:hover {
-            background-color: #C0392B;
-        }
-
-        .hero-section {
-            padding: 100px 0;
-            text-align: center;
-            background-color: #18BC9C;
-            color: #ffffff;
-            position: relative;
-            z-index: 1;
-            width: 100%;
-            margin: 0;
-        }
-        .hero-section h1 {
-            font-family: 'Impact', sans-serif;
-            font-size: 3rem;
-            margin-bottom: 20px;
-        }
-        .hero-section p {
-            font-family: 'Verdana', sans-serif;
-            font-size: 1.4rem;
-            font-weight: normal;
-            color: #ffffff;
-            line-height: 1.8;
-            max-width: 800px;
-            margin: 0 auto 30px;
-        }
-        .hero-section .btn-primary {
-            background-color: #E74C3C;
-            border: none;
-            color: #ffffff;
-            font-weight: normal;
-            padding: 10px 30px;
-            font-size: 1rem;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-            font-family: 'Verdana', sans-serif;
-        }
-        .hero-section .btn-primary:hover {
-            background-color: #C0392B;
-        }
-
-        .section {
-            padding: 60px 0;
-        }
-        .section-title {
-            font-family: 'Impact', sans-serif;
-            font-size: 2.5rem;
-            font-weight: normal;
-            margin-bottom: 40px;
-            text-align: center;
-        }
-        .section p {
-            font-size: 1.2rem;
-            line-height: 1.8;
-            font-family: 'Verdana', sans-serif;
-            font-weight: normal;
-        }
-
-        #about p, #faq .accordion-body {
-            font-family: 'Verdana', sans-serif;
-            font-size: 1.2rem;
-            font-weight: normal;
-            color: #2C3E50;
-        }
-
-        .faq .accordion-button {
-            font-family: 'Impact', sans-serif;
-            font-weight: normal;
-            background-color: #ffffff;
-            color: #2C3E50;
-            transition: background-color 0.3s, color 0.3s;
-        }
-        .faq .accordion-button:not(.collapsed) {
-            background-color: #18BC9C;
-            color: #ffffff;
-        }
-        .faq .accordion-body {
-            background-color: #f8f9fa;
-        }
-
-        .footer {
-            background-color: #2C3E50; /* Темно-синій */
-            color: #ffffff;
-            text-align: center;
-            padding: 20px 0;
-            margin-top: 40px;
-        }
-        .footer-title {
-            font-family: 'Impact', sans-serif;
-            font-size: 1.5rem;
-            font-weight: normal;
-            margin-bottom: 20px;
-            position: relative;
-            display: inline-block;
-        }
-        .footer-title::after {
-            content: '';
-            width: 50px;
-            height: 4px;
-            background-color: #18BC9C;
-            position: absolute;
-            left: 50%;
-            bottom: -10px;
-            transform: translateX(-50%);
-        }
-        .footer a {
-            color: #E74C3C;
-            text-decoration: none;
-            font-family: 'Verdana', sans-serif;
-            font-size: 0.9rem;
-        }
-        .footer a:hover {
-            text-decoration: underline;
-        }
-
-        @media (max-width: 768px) {
-            .hero-section {
-                padding: 70px 0;
-            }
-            .hero-section h1 {
-                font-size: 2.5rem;
-            }
-            .section-title {
-                font-size: 2rem;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body>
     <!-- Navbar -->
@@ -212,8 +34,8 @@
                     </li>
                 </ul>
                 <div class="d-flex ms-3">
-                    <a href="#" class="btn">Вхід</a>
-                    <a href="#" class="btn">Реєстрація</a>
+                    <a href="#" class="btn login-btn" role="button">Вхід</a>
+                    <a href="#" class="btn register-btn" role="button">Реєстрація</a>
                 </div>
             </div>
         </div>
@@ -240,6 +62,35 @@
             <p>Зв'яжіться з нами: <a href="mailto:info@espadshchina.ua">info@espadshchina.ua</a></p>
         </div>
     </footer>
+
+    <!-- Modals -->
+    <div id="modals">
+        <div class="modal" id="loginModal" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Вхід</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" placeholder="example@mail.com">
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Пароль</label>
+                                <input type="password" class="form-control" id="password" placeholder="Ваш пароль">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Увійти</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'js/main.js' %}"></script>
 </body>
 </html>

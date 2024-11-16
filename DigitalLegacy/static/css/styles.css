@@ -1,0 +1,125 @@
+/* Стили для кнопки "Вхід" */
+.login-btn {
+    background-color: #3498db;
+    color: #fff;
+    border: 1px solid #2980b9;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    margin-right: 10px; /* Отступ между кнопками */
+}
+
+.login-btn:hover {
+    background-color: #2980b9;
+}
+
+/* Стили для кнопки "Реєстрація" */
+.register-btn {
+    background-color: #e74c3c;
+    color: #fff;
+    border: 1px solid #c0392b;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.register-btn:hover {
+    background-color: #c0392b;
+}
+
+/* Общие стили */
+body {
+    background-color: #f8f9fa;
+    color: #333333;
+    font-family: 'Verdana', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Гарантируем, что страница занимает всю высоту */
+}
+
+/* Логотип */
+.navbar-brand img {
+    height: 50px;
+    width: auto;
+    margin-right: 10px; /* Отступ между логотипом и текстом */
+}
+
+/* Стили для Navbar */
+.navbar {
+    background-color: #2C3E50;
+    padding: 10px 0;
+    margin-bottom: 0; /* Убираем отступ между navbar и следующей секцией */
+}
+.navbar-brand {
+    font-family: 'Impact', sans-serif;
+    color: #ffffff !important;
+    font-weight: normal;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+}
+.navbar-nav .nav-link {
+    font-family: 'Arial', sans-serif;
+    color: #ffffff !important;
+    font-weight: normal;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.navbar-nav .nav-link:hover {
+    color: #18BC9C !important;
+}
+
+/* Hero Section */
+.hero-section {
+    padding: 100px 0;
+    text-align: center;
+    background-color: #18BC9C;
+    color: #ffffff;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    margin: 0; /* Убираем лишние отступы */
+    box-sizing: border-box;
+}
+
+/* Footer */
+.footer {
+    background-color: #2C3E50;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 0; /* Убираем пустое пространство */
+    position: relative;
+    bottom: 0;
+}
+
+.footer .container {
+    margin: 0 auto;
+    max-width: 1200px;
+    text-align: center;
+}
+
+/* Заголовки и отступы для секций */
+.section-title {
+    font-family: 'Impact', sans-serif;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.section {
+    padding: 80px 0; /* Отступы между секциями */
+}
+
+/* Текст в секциях */
+.section p, #about p, #faq .accordion-body {
+    font-family: 'Verdana', sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #2C3E50;
+}
