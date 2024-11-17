@@ -123,3 +123,10 @@ body {
     line-height: 1.8;
     color: #2C3E50;
 }
+
+.alert-placeholder {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    z-index: 1050;
+}

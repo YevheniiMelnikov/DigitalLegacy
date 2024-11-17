@@ -4,7 +4,11 @@ from django.contrib import messages
 
 
 def index(request):
-    return render(request, "main/main.html", {"title": "ЄСпадщина"})
+    return render(request, "main.html", {"title": "ЄСпадщина"})
+
+
+def profile_view(request):
+    return render(request, "profile.html")
 
 
 def contact(request):
@@ -23,4 +27,4 @@ def contact(request):
 
         messages.success(request, "Ваше повідомлення було відправлено успішно!")
         return redirect("index")
-    return render(request, "main/contact.html")
+    return render(request, "contact.html")
